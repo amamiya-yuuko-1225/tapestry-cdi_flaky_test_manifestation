@@ -8,8 +8,9 @@ jobs:
         uses: stCarolas/setup-maven@v4.3
         with:
           maven-version: 3.8.2
-      - run: cd tapestry-cdi_flaky_test_manifestation
+      - run: 
             git clone https://github.com/amamiya-yuuko-1225/tapestry-cdi_flaky_test_manifestation.git
+            cd tapestry-cdi_flaky_test_manifestation
             mvn test-compile -am
             mvn test -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope
             mvn edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope
