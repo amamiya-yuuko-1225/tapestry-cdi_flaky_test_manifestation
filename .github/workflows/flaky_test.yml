@@ -4,7 +4,7 @@ jobs:
   _1:
     runs-on: ubuntu-latest
     steps:
-      - run: git clone https://github.com/worldline/tapestry-cdigit ;git checkout 0bd3d11e464b45661c31379e4016c3cc1599b133
+      - run: git clone https://github.com/worldline/tapestry-cdigit.git ;git checkout 0bd3d11e464b45661c31379e4016c3cc1599b133
   regular_test:
     runs-on: ubuntu-20.04
     needs: _1
