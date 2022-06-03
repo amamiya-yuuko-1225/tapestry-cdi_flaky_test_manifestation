@@ -9,4 +9,5 @@ jobs:
         with:
           maven-version: 3.8.2
       - uses: actions/checkout@v1
-      - run: ls -a
+      - run: mvn test-compile -am;mvn test -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope;mvn edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope
+  
