@@ -2,12 +2,12 @@ name: FLAKY TEST DEMONSTRAION
 on: [push]
 jobs:
   _1:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Set up Maven
         uses: stCarolas/setup-maven@v4.3
         with:
-          maven-version: 3.8.2
+          maven-version: 3.8.5
       - uses: actions/checkout@v1
       - run: mvn test-compile -am;mvn test -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope
   nondex_error:
