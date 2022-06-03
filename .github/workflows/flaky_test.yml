@@ -4,7 +4,7 @@ jobs:
   _1:
     runs-on: ubuntu-latest
     steps:
-      - run: git clone https://github.com/worldline/tapestry-cdi
+      - run: git clone https://github.com/worldline/tapestry-cdigit ;git checkout 0bd3d11e464b45661c31379e4016c3cc1599b133
   regular_test:
     runs-on: ubuntu-20.04
     needs: _1
@@ -13,7 +13,7 @@ jobs:
         uses: stCarolas/setup-maven@v4.3
         with:
           maven-version: 3.8.5
-      - run: git checkout 0bd3d11e464b45661c31379e4016c3cc1599b133;cd tapestry-cdi;mvn test-compile -am;mvn test -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope
+      - run: cd tapestry-cdi;mvn test-compile -am;mvn test -Dtest=org.apache.tapestry5.cdi.test.InjectTest#checkConversationScope
   nondex_error:
     runs-on: ubuntu-latest
     needs: regular_test
