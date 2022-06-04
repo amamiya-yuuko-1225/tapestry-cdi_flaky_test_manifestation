@@ -4,7 +4,7 @@ jobs:
   _1:
     runs-on: ubuntu-latest
     steps:
-      - run: git clone https://github.com/worldline/tapestry-cdi.git
+      - run: git clone https://github.com/worldline/tapestry-cdi.git;ls -a
   regular_test:
     runs-on: ubuntu-20.04
     needs: _1
